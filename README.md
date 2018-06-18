@@ -18,12 +18,24 @@ $ cat ~/.civx/civx.conf
 daemon=1
 server=1
 
-So please remember to add this values, this could be done using when you're running the container:
+Now you can start Civx by typing civxd -daemon from any location in terminal.
+When you run civxd for the first time, you will have to set a user and password for rpcuser and rpcpassword which is a protocol used to connect and send commands to Stratis. You can do this by typing:
+
+```
+echo 'rpcuser=USER\nrpcpassword=PASSWORD' >> ~/.civx/civx.conf
+```
+
+**Change USER and PASSWORD to any of your choosing or use a random:
 
 ```
 echo "rpcuser=$(pwgen 13 1)" >> ~/.civx/civx.conf
 echo "rpcpassword=$(pwgen 14 1)" >> ~/.civx/civx.conf
 ```
+
+Once you've completed the above start CivX:
+civxd -daemon
+CivX should now start running in the background.
+
 
 # Use a local wallet
 
@@ -32,6 +44,21 @@ If you want to share the wallet file from your local machine you could expose th
 ```
 docker run -it -v locationOfWalletFileOnYourHostPc.dat:~/.stratis/wallet.dat judavi/civix /bin/bash
 ```
+
+# Check if the wallet is properly running
+
+Check Wallet is Running and Synced
+```
+civxd getinfo
+```
+You're looking for the connections values to verify if is working properly
+
+Another way to confirm the wallet is synced type:
+
+```
+civxd getblocktemplate
+```
+
 
 # Disclaimer
 
