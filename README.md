@@ -19,7 +19,7 @@ daemon=1
 server=1
 
 Now you can start Civx by typing civxd -daemon from any location in terminal.
-When you run civxd for the first time, you will have to set a user and password for rpcuser and rpcpassword which is a protocol used to connect and send commands to Stratis. You can do this by typing:
+When you run civxd for the first time, you will have to set a user and password for rpcuser and rpcpassword which is a protocol used to connect and send commands to Civx. You can do this by typing:
 
 ```
 echo 'rpcuser=USER\nrpcpassword=PASSWORD' >> ~/.civx/civx.conf
