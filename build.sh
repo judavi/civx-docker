@@ -28,8 +28,8 @@ init(){
            password=$(pwgen 14 1)
            echo "daemon=1" >> $config
            echo "server=1" >> $config
-           echo "rpcuser=$user" >> $config
-           echo "rpcpassword=$password" >> $config
+           #echo "rpcuser=$user" >> $config
+           #echo "rpcpassword=$password" >> $config
            echo "" >> $config
            echo "logtimestamps=1" >> $config
         fi
